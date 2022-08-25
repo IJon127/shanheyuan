@@ -1,0 +1,271 @@
+$font-size: 16px
+$padding_outer: 25%
+$padding_m: 45px
+$padding_s: 15px
+
+$bgclr: #fff
+$lnclr:#333
+$hoverlnclr: #000
+
+@mixin size($w, $h)
+  width: $w
+  height: $h
+
+@mixin center
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+
+
+@mixin padding_r
+    padding-right: $padding_m
+    @media only screen and (max-width: 767px)
+        padding-right: $padding_s
+
+@mixin padding_l
+    padding-left: $padding_outer
+    @media only screen and (max-width: 1300px)
+        padding-left: $padding_m
+    @media only screen and (max-width: 767px)
+        padding-left: $padding_s
+
+    
+//reset----------------------------
+
+*, body
+    font-family: 'Inter', sans-serif
+    letter-spacing: 2px
+    padding: 0
+    margin: 0
+    overflow-x: hidden
+    position: relative
+    scroll-behavior: smooth
+    font-weight: 100
+    background-color: $bgclr
+    color: $lnclr
+    border-color: $lnclr
+    box-sizing: border-box
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    -ms-box-sizing: border-box 
+
+
+    
+a
+    text-decoration: none
+    color: $lnclr
+    transition: all .3s ease
+    &:hover
+        opacity: .6
+//common--------------------------------------
+
+h1, h2, h3, h4, h5, h6, p
+    @include padding_r
+
+h1 
+    font-size: 75px
+    font-weight: 300
+h2 
+    font-size: 60px
+    font-weight: 200
+    @media only screen and (max-width: 1300px)
+        font-size: 42px
+    @media only screen and (max-width: 767px)
+        font-size: 36px
+
+h3 
+    font-size: 42px
+    @media only screen and (max-width: 1300px)
+        font-size: 36px
+    @media only screen and (max-width: 767px)
+        font-size: 30px
+    
+
+h4 
+    font-size: 28px
+    @media only screen and (max-width: 1300px)
+        font-size: 20px
+    @media only screen and (max-width: 767px)
+        font-size: 18px
+
+h5 
+    font-size: 16px
+    font-weight: 400
+    @media only screen and (max-width: 1300px)
+        font-size: 14px
+
+
+
+h6
+    font-size: 14px
+    font-weight: 300
+    @media only screen and (max-width: 1300px)
+        font-size: 12px
+
+
+
+p
+    font-size: 14px
+    @media only screen and (max-width: 1300px)
+        font-size: 12px
+
+li 
+    display: list-item
+    list-style-position: inside
+    font-size: 14px
+    @media only screen and (max-width: 1300px)
+        font-size: 12px
+
+
+
+.img_bg
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+
+.grid
+    width: 100%
+    display: grid
+    margin-top: 100px
+    margin-bottom: 100px
+    @include padding_r
+    .img_bg
+        width: 100%
+        padding-top: 100%
+        background-color: #aaa
+
+
+
+//--------------------------------------------
+//header..............................
+header
+    width: 100%
+    justify-content: space-between
+    align-items: center
+
+#jumbotron
+    width: 100%
+    padding-top: 60%
+    background-image: url("assets/hero_l.png")
+    @media only screen and (max-width: 1300px)
+        background-image: url("assets/hero_m.png")
+    @media only screen and (max-width: 767px)
+        background-image: url("assets/hero_s.png")
+        padding-top: 130%
+
+#jumbo_text
+    margin-bottom: 80px
+    h3 
+        margin: 150px 0px 50px 0px
+    p 
+        margin: 30px 0px 10px 0px
+    @media only screen and (max-width: 1300px)
+        margin-bottom: 50px
+    @media only screen and (max-width: 767px)
+        margin-bottom: 30px
+
+//main................................
+main
+    width: 100%
+    overflow: hidden
+
+
+section
+    padding-bottom: 120px
+    @include padding_l
+    @media only screen and (max-width: 1300px)
+        padding-bottom: 90px
+    @media only screen and (max-width: 767px)
+        padding-bottom: 60px
+        
+
+.section_divider
+    margin-bottom: 50px
+    h2
+        border-bottom: solid 1px
+        vertical-align: bottom
+        margin-bottom: 10px
+        
+.section_img
+    margin-bottom: 100px
+    img
+        width: 100%
+.section_img_flex
+    display: flex
+    gap: 10px
+    margin-bottom: 15px
+    @include padding_r
+    @media only screen and (max-width: 1300px)
+        margin-bottom: 7px
+        gap: 5px
+    @media only screen and (max-width: 767px)
+        margin-bottom: 5px
+        gap: 3px
+.img_flex_1
+    flex: 1
+.section_text
+    margin: 30px 0px
+    h5
+        margin-top: 30px
+    p
+        margin-top: 30px
+    ol 
+        margin: 15px 0px 30px 0px
+        li
+            padding-bottom: 5px
+.subtitle
+    margin-top: 100px
+
+
+//footer...............................
+footer
+    width: 100%
+.footer_divider
+    margin-bottom: 70px
+    @include padding_l
+    div
+        width: 100%
+        border-bottom: 1px solid
+.footer_box
+    width: 500px
+    margin: auto
+.footer_top
+    text-align: center
+    display: inline-block
+    left: 50%
+    transform: translateX(-50%)
+
+.footer_copyright
+    margin-top: 70px
+    margin-bottom: 50px
+    text-align: center
+
+
+//Home Page =============================================
+
+
+//about..............................
+#about
+    h3
+        font-weight: 400
+.about_row
+    margin-top: 100px
+    display: flex
+    
+.about_title
+    width: 45%
+    // flex: 45
+.about_list
+    width: 55%
+    // flex: 55
+.about_item
+    margin-bottom: 30px
+    h5
+        margin-bottom: 5px
+    h6
+        font-style: italic
+
+
+
+
